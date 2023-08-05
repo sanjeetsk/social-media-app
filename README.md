@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+## Project Overview
+## Task
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+    Create a multi-page React app that fetches data from an API and displays it in different views, using React Router and Redux to manage state and routing.
 
-## Available Scripts
+### Problem Statement
+    You have to use React Router to create multiple routes and views for your app. Your app should have the following views:
+    A home page that displays a list of items fetched from an API.
+    A detail page that displays information about a single item.
+    Your app should have two routes:
+    / - The home page
 
-In the project directory, you can run:
 
-### `npm start`
+    /item/:id - The detail page for a specific item, where :id is the ID of the item
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    Use Redux to manage the app's state. You should create at least one Redux store to hold the data you fetch from the API and use it to populate your views.
 
-### `npm test`
+    Fetch data from an API using Redux Thunk middleware. Use the `fetch` method to get the data from the following API endpoint- https://jsonplaceholder.typicode.com/posts.
+    The data returned from the API will be an array of objects. Each object will have the following properties:
+    userId: The ID of the user who created the post.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+    id: The ID of the post
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    title: The title of the post
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+    body: The body of the post
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    imgSrc: Since the image is not coming in the api result use this as your image src in the post component - https://picsum.photos/200?random=${post.id} where post.id is the id given in the object returned by api
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    You should create a Redux action to fetch the data and update the Redux store with the fetched data.
 
-## Learn More
+    Display the data in your views using React components. You should create separate components for each view, and use React Router to navigate between them.
+    The home page should display a list of items, with each item displaying the title of the post. Clicking on an item should take the user to the detail page for that item. Make sure that you don’t show the entire title and the entire description as it will not look nice. Slice it and show it. As shown in the UI. Add “Read More…” if the entire description doesn’t fit inside the card view.
+    The detail page should display the title and body of the post, as well as the ID of the user who created the post.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    Add styling to the website as shown in the figma
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    Make sure your app is responsive and works well on both desktop and mobile devices. Also manage the loading state properly using redux as well.
+    Design Links
+    Figma Link:
+    https://www.figma.com/file/fHK48nXqVI3BWA10TsVOVb/Social-Media-App---2?type=design&node-id=2-8891&mode=design&t=4zAOSukqHM2beSnN-0
 
-### Code Splitting
+### Marking Scheme
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    Create React components and set up Redux (15 marks)
+    Create separate components for the home page and detail page views
+    Set up a Redux store to hold the fetched data
+    Create Redux actions and reducers to fetch data from the API and update the Redux store
 
-### Analyzing the Bundle Size
+    Fetch data from the API using Redux Thunk (15 marks)
+    Implement a Redux Thunk middleware to make asynchronous API requests
+    Create an action to fetch data from the API and update the Redux store
+    Handle loading state while fetching data and display a loading spinner or placeholder
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    Set up React Router and define routes (10 marks)
+    Set up a React Router in your app and define the necessary routes
+    Create route components and render them based on the current URL
 
-### Making a Progressive Web App
+    Display data in views using React components (15 marks)
+    Display a list of items on the home page, with each item showing the post title
+    Implement a click event to navigate to the detail page when an item is clicked
+    Display the post title, body, and the ID of the user who created the post on the detail page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    Style the website as shown in the Figma design (10 marks)
+    Apply appropriate styling to match the provided design in Figma.
+    Ensure responsiveness and compatibility with both desktop and mobile devices.
 
-### Advanced Configuration
+    Slice long titles and descriptions (10 marks)
+    Slice the post title and body to fit within the card view on the home page
+    Add a "Read More..." link if the entire description doesn't fit within the card view
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    Manage loading state and error handling (20 marks)
+    Properly manage the loading state while fetching data from the API
+    Display a loading spinner or placeholder during the data loading process
+    Handle errors that may occur during the API request and display an appropriate error message
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    Deployment (5 marks)

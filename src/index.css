@@ -11,3 +11,52 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* components/Home.css */
+.home-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.navbar {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.item-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.item-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.3s;
+}
+
+.item-card:hover {
+  transform: translateY(-5px);
+}
+
+.item-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.item-description {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.read-more {
+  font-size: 0.8rem;
+  color: #007bff;
+  cursor: pointer;
+}

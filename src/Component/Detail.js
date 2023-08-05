@@ -2,7 +2,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import './Detail.css'; // Import your CSS file
 
 function Detail({ items, match }) {
     const itemId = parseInt(match.params.id);

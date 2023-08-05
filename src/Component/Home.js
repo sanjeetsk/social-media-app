@@ -3,12 +3,11 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchData } from '../actions/dataActions';
 import { Link } from 'react-router-dom';
-import './Home.css'; // Import your CSS file
 
 function Home({ items, loading, fetchData }) {
     useEffect(() => {
         fetchData();
-    }, []);
+    }, [fetchData]);
 
     if (loading) {
         return <div className="loading">Loading...</div>;

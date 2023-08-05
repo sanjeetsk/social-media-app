@@ -35,7 +35,7 @@ function Detail({ items }) {
         </Link>
       </nav>
       <div className="item-detail">
-        <img className='img' src={image} alt='img' />
+        <img className='imag' src={image} alt='img' />
         <div>
           <h2 className="item-title">{item.title}</h2>
           <div className="toggle-buttons">
@@ -60,7 +60,7 @@ function Detail({ items }) {
       <div className="item-list">
         {items.map((post) => (
           <Link key={post.id} to={`/item/${post.id}`} className="item-card">
-            <img className='imag' src={image} alt='img' />
+            <img className='img' src={image} alt='img' />
             <h2 className="item-title">{post.title}</h2>
             <p className="item-description">{`${post.body.slice(0, 100)}...`}</p>
             <p className="read-more">Read More...</p>

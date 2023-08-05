@@ -15,12 +15,13 @@ code {
 
 /* components/Home.css */
 .home-container {
-  max-width: 800px;
+  max-width: 1075px;
   margin: 0 auto;
   padding: 20px;
 }
 
 .navbar {
+  margin-top: -20px;
   background-color: #333;
   color: white;
   text-align: center;
@@ -28,8 +29,9 @@ code {
 }
 
 .item-list {
+  margin-top: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
 }
 
@@ -43,6 +45,10 @@ code {
 
 .item-card:hover {
   transform: translateY(-5px);
+}
+
+.img {
+  width: 100%;
 }
 
 .item-title {
@@ -60,3 +66,72 @@ code {
   color: #007bff;
   cursor: pointer;
 }
+
+/* components/Detail.css */
+.detail-container {
+  max-width: 1075px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.navbar {
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+.item-detail {
+  border: 1px solid #ccc;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+}
+
+.imag{
+  width: 60%;
+}
+
+.item-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.item-body {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.user-id {
+  font-size: 1rem;
+  color: #555;
+}
+
+.toggle-buttons {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.detail-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.detail-button.active {
+  background-color: #0056b3;
+}
+
